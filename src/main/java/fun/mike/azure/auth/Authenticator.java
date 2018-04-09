@@ -13,7 +13,7 @@ public class Authenticator {
         BearerTokenResult bearerTokenResult = BearerTokenParser.parse(header);
 
         if (bearerTokenResult.failed()) {
-            return AuthenticationResult.failed(bearerTokenResult.getMessage());
+            return AuthenticationResult.invalid(bearerTokenResult.getMessage());
         }
 
         JwksUrlResult jwksUrlResult = JwksUrlFetcher.fetch(tenantId);
@@ -28,4 +28,3 @@ public class Authenticator {
         return TokenValidator.validate(tenantId, clientId, jwksUrl, token);
     }
 }
-
