@@ -11,7 +11,7 @@ import net.minidev.json.parser.ParseException;
 
 public class JwksUrlFetcher {
     public static JwksUrlResult fetch(String tenantId) {
-        URL metadataURL = null;
+        URL metadataURL;
 
         String metadataPath = String.format("https://login.microsoftonline.com/%s/v2.0/.well-known/openid-configuration",
                                             tenantId);
@@ -26,7 +26,7 @@ public class JwksUrlFetcher {
         JSONParser parser = new JSONParser(JSONParser.MODE_JSON_SIMPLE);
 
 
-        JSONObject metadata = null;
+        JSONObject metadata;
         try (InputStream metadataStream = metadataURL.openStream()) {
             metadata = (JSONObject) parser.parse(metadataStream);
 

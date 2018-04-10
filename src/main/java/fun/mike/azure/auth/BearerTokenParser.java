@@ -18,8 +18,8 @@ public class BearerTokenParser {
         String scheme = parts.get(0);
 
         if (!"Bearer".equals(scheme)) {
-            String message = message = String.format("Unexpected authentication scheme %s in the \"Authorization\" header; expected \"Bearer\".",
-                                                     scheme);
+            String message = String.format("Unexpected authentication scheme %s in the \"Authorization\" header; expected \"Bearer\".",
+                                           scheme);
             return BearerTokenResult.error(message);
         }
 

@@ -23,6 +23,7 @@ public class Authenticator {
         }
 
         String token = bearerTokenResult.getToken();
+
         String jwksUrl = jwksUrlResult.getUrl();
 
         return TokenValidator.validate(tenantId, clientId, jwksUrl, token);

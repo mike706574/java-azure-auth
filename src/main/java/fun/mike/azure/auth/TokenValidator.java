@@ -20,7 +20,7 @@ import com.nimbusds.jwt.proc.DefaultJWTProcessor;
 
 public class TokenValidator {
     public static AuthenticationResult validate(String tenantId, String clientId, String jwksUrl, String token) {
-        JWKSource<SecurityContext> jwksSource = null;
+        JWKSource<SecurityContext> jwksSource;
         try {
             jwksSource = new RemoteJWKSet<>(new URL(jwksUrl));
         } catch (MalformedURLException ex) {
