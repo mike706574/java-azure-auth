@@ -1,5 +1,7 @@
 # azure-auth
 
+![Maven Central](https://img.shields.io/maven-central/v/fun.mike/azure-auth-alpha.svg)
+
 Azure auth functionality.
 
 ## Copyright and License
