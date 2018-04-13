@@ -1,6 +1,6 @@
 # azure-auth
 
-[![Maven Central](https://img.shields.io/maven-central/v/fun.mike/azure-auth-alpha.svg)](http://search.maven.org/#artifactdetails%7Cfun.mike%7Cazure-auth-alpha%7C0.0.6%7Cjar)
+[![Maven Central](https://img.shields.io/maven-central/v/fun.mike/azure-auth-alpha.svg)](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22fun.mike%22%20AND%20a%3A%22azure-auth-alpha%22)
 
 
 
