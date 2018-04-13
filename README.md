@@ -1,6 +1,6 @@
 # azure-auth
 
-[![Maven Central](https://img.shields.io/maven-central/v/fun.mike/azure-auth-alpha.svg)](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22fun.mike%22%20AND%20a%3A%22azure-auth-alpha%22)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/fun.mike/azure-auth-alpha/badge.svg)](https://maven-badges.herokuapp.com/maven-central/fun.mike/azure-auth-alpha)
 
 Azure auth functionality.
 
