@@ -1,4 +1,4 @@
-# azure-auth-alpha
+# azure-auth
 
 Azure auth functionality.
 
