@@ -1,4 +1,4 @@
-package fun.mike.azure.auth;
+package fun.mike.azure.auth.alpha;
 
 public class Authenticator {
     private final String tenantId;

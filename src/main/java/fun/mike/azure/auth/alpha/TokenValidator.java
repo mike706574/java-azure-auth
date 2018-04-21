@@ -1,4 +1,4 @@
-package fun.mike.azure.auth;
+package fun.mike.azure.auth.alpha;
 
 import java.net.MalformedURLException;
 import java.net.URL;

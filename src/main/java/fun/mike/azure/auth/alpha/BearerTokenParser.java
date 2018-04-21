@@ -1,4 +1,4 @@
-package fun.mike.azure.auth;
+package fun.mike.azure.auth.alpha;
 
 import java.util.Arrays;
 import java.util.List;

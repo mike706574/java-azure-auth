@@ -1,4 +1,4 @@
-package fun.mike.azure.auth;
+package fun.mike.azure.auth.alpha;
 
 public class BearerTokenResult {
     private final String token;
