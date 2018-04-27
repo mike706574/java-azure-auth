@@ -18,9 +18,9 @@ final String header = "Authorization eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdW
 
 String header = ctx.getHeaderString(HttpHeaders.AUTHORIZATION);
 
-AuthenticationResult result = new Authenticator(tenantId,
-                                                clientId);
-    .authenticate(header);
+Authenticator authenticator = AuthenticatorFactory.build(tenantId, clientId);
+
+AuthenticationResult result = authenticator.authenticate(header);
 
 result.valid()
 => true
