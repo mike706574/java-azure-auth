@@ -74,6 +74,12 @@
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>fun.mike</groupId>
+      <artifactId>io-support-alpha</artifactId>
+      <version>0.0.7</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>

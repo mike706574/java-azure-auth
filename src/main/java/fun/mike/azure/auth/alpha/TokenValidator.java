@@ -3,6 +3,7 @@ package fun.mike.azure.auth.alpha;
 import java.text.ParseException;
 
 import com.nimbusds.jose.JOSEException;
+import com.nimbusds.jose.RemoteKeySourceException;
 import com.nimbusds.jose.proc.BadJOSEException;
 import com.nimbusds.jose.proc.SecurityContext;
 import com.nimbusds.jwt.JWTClaimsSet;
@@ -19,8 +20,13 @@ public class TokenValidator {
         try {
             JWTClaimsSet claimsSet = processor.process(token, null);
             return AuthenticationResult.valid(claimsSet.getClaims());
-        } catch (ParseException | JOSEException | BadJOSEException ex) {
+        }
+        catch(RemoteKeySourceException ex) {
+            return AuthenticationResult.failed(ex.getMessage());
+        }
+        catch (ParseException | JOSEException | BadJOSEException ex) {
             return AuthenticationResult.invalid(ex.getMessage());
         }
+
     }
 }

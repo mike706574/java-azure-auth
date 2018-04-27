@@ -49,8 +49,9 @@ public class TokenValidatorFactory {
         try {
             metadata = OIDCProviderMetadata.parse(rawMetadata);
         } catch (com.nimbusds.oauth2.sdk.ParseException e) {
-            String message = String.format("Failed to parse OpenID provider metadata from URL \"%s\": %s",
+            String message = String.format("Failed to parse OpenID provider metadata from URL \"%s\": %s Metadata: %s",
                                            metadataUrl,
+                                           e.getMessage(),
                                            rawMetadata);
             throw new IllegalStateException(message);
         }
@@ -61,15 +62,16 @@ public class TokenValidatorFactory {
 
         try {
             jwksUrl = jwksUri.toURL();
-        } catch (MalformedURLException e) {
-            String message = String.format("Malformed JWKS URI \"%s\" retrieved from metadata.",
-                                           jwksUri.toString());
+        } catch (IllegalArgumentException | MalformedURLException e) {
+            String message = String.format("Malformed JWKS URI \"%s\" retrieved from metadata: %s",
+                                           jwksUri.toString(),
+                                           e.getMessage());
             throw new IllegalStateException(message);
         }
 
         ResourceRetriever resourceRetriever =
-                new DefaultResourceRetriever(500,
-                                             500,
+                new DefaultResourceRetriever(1,
+                                             1,
                                              RemoteJWKSet.DEFAULT_HTTP_SIZE_LIMIT);
 
         JWKSource<SecurityContext> jwksSource = new RemoteJWKSet<>(jwksUrl, resourceRetriever);
