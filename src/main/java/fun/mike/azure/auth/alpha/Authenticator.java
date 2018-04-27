@@ -1,12 +1,11 @@
 package fun.mike.azure.auth.alpha;
 
 public class Authenticator {
-    private final String tenantId;
-    private final String clientId;
+    private final TokenValidator tokenValidator;
 
-    public Authenticator(String tenantId, String clientId) {
-        this.tenantId = tenantId;
-        this.clientId = clientId;
+
+    public Authenticator(TokenValidator tokenValidator) {
+        this.tokenValidator = tokenValidator;
     }
 
     public AuthenticationResult authenticate(String header) {
@@ -16,16 +15,8 @@ public class Authenticator {
             return AuthenticationResult.invalid(bearerTokenResult.getMessage());
         }
 
-        JwksUrlResult jwksUrlResult = JwksUrlFetcher.fetch(tenantId);
-
-        if (jwksUrlResult.failed()) {
-            return AuthenticationResult.failed(jwksUrlResult.getMessage());
-        }
-
         String token = bearerTokenResult.getToken();
 
-        String jwksUrl = jwksUrlResult.getUrl();
-
-        return TokenValidator.validate(tenantId, clientId, jwksUrl, token);
+        return tokenValidator.validate(token);
     }
 }
