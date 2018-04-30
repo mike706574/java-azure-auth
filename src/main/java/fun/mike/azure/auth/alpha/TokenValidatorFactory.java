@@ -25,7 +25,9 @@ import com.nimbusds.openid.connect.sdk.op.OIDCProviderMetadata;
 public class TokenValidatorFactory {
     public static TokenValidator build(String metadataUrl,
                                        String requiredIssuer,
-                                       String requiredAudience) {
+                                       String requiredAudience,
+                                       int jwksConnectTimeout,
+                                       int jwksReadTimeout) {
         URL metadataURL;
         try {
             metadataURL = new URL(metadataUrl);
@@ -70,8 +72,8 @@ public class TokenValidatorFactory {
         }
 
         ResourceRetriever resourceRetriever =
-                new DefaultResourceRetriever(1,
-                                             1,
+                new DefaultResourceRetriever(jwksConnectTimeout,
+                                             jwksReadTimeout,
                                              RemoteJWKSet.DEFAULT_HTTP_SIZE_LIMIT);
 
         JWKSource<SecurityContext> jwksSource = new RemoteJWKSet<>(jwksUrl, resourceRetriever);

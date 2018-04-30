@@ -25,7 +25,9 @@ public class TokenValidatorFactoryTest {
         String requiredIssuer = RequiredIssuerBuilder.build(tenantId);
         TokenValidatorFactory.build(metadataUrl,
                                     requiredIssuer,
-                                    clientId);
+                                    clientId,
+                                    5,
+                                    5);
     }
 
     @Test
@@ -39,7 +41,9 @@ public class TokenValidatorFactoryTest {
         String requiredIssuer = RequiredIssuerBuilder.build(tenantId);
         TokenValidatorFactory.build(metadataUrl,
                                     requiredIssuer,
-                                    clientId);
+                                    clientId,
+                                    5,
+                                    5);
     }
 
     @Test
@@ -54,7 +58,9 @@ public class TokenValidatorFactoryTest {
                 String requiredIssuer = RequiredIssuerBuilder.build(tenantId);
                 TokenValidatorFactory.build(metadataUrl,
                                             requiredIssuer,
-                                            clientId);
+                                            clientId,
+                                            5,
+                                            5);
             });
     }
 
@@ -72,7 +78,9 @@ public class TokenValidatorFactoryTest {
                 String requiredIssuer = RequiredIssuerBuilder.build(tenantId);
                 TokenValidator tokenValidator = TokenValidatorFactory.build(metadataUrl,
                                                                             requiredIssuer,
-                                                                            clientId);
+                                                                            clientId,
+                                                                            5,
+                                                                            5);
                 assertNotNull(tokenValidator);
             });
     }
@@ -88,7 +96,9 @@ public class TokenValidatorFactoryTest {
                 String requiredIssuer = RequiredIssuerBuilder.build(tenantId);
                 TokenValidator tokenValidator = TokenValidatorFactory.build(metadataUrl,
                                                                             requiredIssuer,
-                                                                            clientId);
+                                                                            clientId,
+                                                                            5,
+                                                                            5);
                 assertNotNull(tokenValidator);
             });
     }
