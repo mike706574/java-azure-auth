@@ -9,7 +9,7 @@
 
   <groupId>fun.mike</groupId>
   <artifactId>azure-auth-alpha</artifactId>
-  <version>0.0.12-SNAPSHOT</version>
+  <version>0.0.12</version>
   <packaging>jar</packaging>
 
   <name>azure-auth</name>
