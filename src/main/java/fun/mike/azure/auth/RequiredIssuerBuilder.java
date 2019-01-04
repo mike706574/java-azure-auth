@@ -1,4 +1,4 @@
-package fun.mike.azure.auth.alpha;
+package fun.mike.azure.auth;
 
 public class RequiredIssuerBuilder {
     public static String build(String tenantId) {

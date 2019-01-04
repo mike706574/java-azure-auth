@@ -1,4 +1,4 @@
-package fun.mike.azure.auth.alpha;
+package fun.mike.azure.auth;
 
 public class Authenticator {
     private final TokenValidator tokenValidator;

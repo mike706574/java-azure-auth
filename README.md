@@ -1,15 +1,15 @@
 # azure-auth
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/fun.mike/azure-auth-alpha/badge.svg)](https://maven-badges.herokuapp.com/maven-central/fun.mike/azure-auth-alpha)
-[![Javadocs](https://www.javadoc.io/badge/fun.mike/azure-auth-alpha.svg)](https://www.javadoc.io/doc/fun.mike/azure-auth-alpha)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/fun.mike/azure-auth/badge.svg)](https://maven-badges.herokuapp.com/maven-central/fun.mike/azure-auth)
+[![Javadocs](https://www.javadoc.io/badge/fun.mike/azure-auth.svg)](https://www.javadoc.io/doc/fun.mike/azure-auth)
 
 Azure auth functionality.
 
 ## Example
 
 ```java
-import fun.mike.azure.auth.alpha.Authenticator;
-import fun.mike.azure.auth.alpha.AuthenticationResult;
+import fun.mike.azure.auth.Authenticator;
+import fun.mike.azure.auth.AuthenticationResult;
 
 final String tenantId = "c834c34e-bbd3-4ea1-c2c2-51daeff91aa32";
 final String clientId = "ae33c32e-d2f2-4992-a4b2-51d03e7c8677"

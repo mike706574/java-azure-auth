@@ -1,4 +1,4 @@
-package fun.mike.azure.auth.alpha;
+package fun.mike.azure.auth;
 
 import java.util.Map;
 

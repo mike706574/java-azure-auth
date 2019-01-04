@@ -1,4 +1,4 @@
-package fun.mike.azure.auth.alpha;
+package fun.mike.azure.auth;
 
 import org.junit.Ignore;
 import org.junit.Rule;

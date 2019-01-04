@@ -1,4 +1,4 @@
-package fun.mike.azure.auth.alpha;
+package fun.mike.azure.auth;
 
 public class AuthenticatorFactory {
     public static Authenticator build(String tenantId, String clientId, int jwksConnectTimeout, int jwksReadTimeout) {
